@@ -1,10 +1,11 @@
 import zmq
 
+IP = "192.168.1.137"
+
 print("Connecting to server... ")
 context = zmq.Context()
 socket = context.socket(zmq.REQ)
-socket.connect("tcp://localhost:5555")
-print("Conected")
+socket.connect("tcp://{}:5555".format(IP))
 
 for i in range(10):
     # Send a message to server
