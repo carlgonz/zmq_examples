@@ -1,6 +1,7 @@
 import zmq
 
-IP = "192.168.1.137"
+#IP = "192.168.1.137"
+IP = "localhost"
 
 print("Connecting to publisher... ")
 context = zmq.Context()
