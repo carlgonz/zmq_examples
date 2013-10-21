@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>431</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ZMQ - CHAT</string>
+  </property>
+  <property name="locale">
+   <locale language="English" country="UnitedStates"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="3" column="1">
+     <widget class="QLineEdit" name="message_text">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="send_button">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="text">
+       <string>Send</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1" colspan="2">
+     <widget class="QTextEdit" name="chat_text">
+      <property name="enabled">
+       <bool>false</bool>
+      </property>
+      <property name="autoFormatting">
+       <set>QTextEdit::AutoAll</set>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1" colspan="2">
+     <widget class="QGroupBox" name="connection_group">
+      <property name="title">
+       <string>Connection</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="server_text">
+         <property name="text">
+          <string>localhost</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="user_label">
+         <property name="text">
+          <string>Usuario</string>
+         </property>
+         <property name="buddy">
+          <cstring>user_text</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="user_text">
+         <property name="text">
+          <string>Usuario</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="server_label">
+         <property name="text">
+          <string>Server</string>
+         </property>
+         <property name="buddy">
+          <cstring>server_text</cstring>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QPushButton" name="connect_button">
+         <property name="text">
+          <string>Connect</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>480</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionSalir"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionSalir">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+ </widget>
+ <tabstops>
+  <tabstop>server_text</tabstop>
+  <tabstop>user_text</tabstop>
+  <tabstop>connect_button</tabstop>
+  <tabstop>message_text</tabstop>
+  <tabstop>send_button</tabstop>
+  <tabstop>chat_text</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionSalir</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>user_text</sender>
+   <signal>returnPressed()</signal>
+   <receiver>connect_button</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>320</x>
+     <y>111</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>392</x>
+     <y>110</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>server_text</sender>
+   <signal>returnPressed()</signal>
+   <receiver>connect_button</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>327</x>
+     <y>84</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>443</x>
+     <y>102</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>message_text</sender>
+   <signal>returnPressed()</signal>
+   <receiver>send_button</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>336</x>
+     <y>382</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>384</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

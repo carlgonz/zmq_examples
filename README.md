@@ -13,4 +13,16 @@ Usefull links
 basic
 -----
 
-Simple test, to explore basics zmq usage
+Simple test, to explore basics zmq usage. Implements req-resp pattern
+
+chat
+----
+
+Chat simple implementation using pub-sub and push-pull patterns
+
+chat-gui
+--------
+
+More elaborated chat application using qt-gui and zmq with pub-sub and push-pull patterns
+
+
