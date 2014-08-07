@@ -25,4 +25,7 @@ chat-gui
 
 More elaborated chat application using qt-gui and zmq with pub-sub and push-pull patterns
 
+multicast
+---------
 
+Simple test using epgm multicast pub-sub socket
